@@ -8,22 +8,19 @@ public class Main {
         System.out.print("Enter a number: ");
         int n = scanner.nextInt();
         scanner.close();
-        int result = sum_incr(n);
-        System.out.println("Sum increment: " + result);
+        int[] arr = new int[n];
+        int result = sum_incr(arr);
+    
+        
+        System.out.println("1 from " + java.util.Arrays.toString(arr) + " to Sum increment: " + result);
     }
 
-    private static int sum_incr(int n) {
-        int s=0;
-        for (int i = 0; i < n+1; i++) {
-            s += n;
+    public static int sum_incr(int[] arr) {
+        int incr = 0;   
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = i + 1;
+            incr += arr[i];
         }
-        
-        return s;
+        return incr;
     }
 }
-
-/*class class Increment {
-    public int sum_incr(int n) {
-       
-    }
-}*/
